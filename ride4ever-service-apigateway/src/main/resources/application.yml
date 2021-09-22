@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ride4ever-service-apigateway
+  config:
+    import: configserver:http://ride4ever-service-configuration:9101
+server:
+  port: 9600
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://ride4ever-service-discovery:8761/eureka}
+  host:
+    socket-timeout-millis: 30000
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - prometheus
