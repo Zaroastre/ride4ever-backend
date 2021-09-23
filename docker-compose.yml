@@ -125,9 +125,9 @@ services:
     ports:
       - 3000:3000
 networks:
-  default:
-    external:
-      name: ride4ever-backend_default
+  # default:
+  #   external:
+  #     name: ride4ever-backend_default
   # network_database: {}
   network_discovery: {}
   network_configuration: {}

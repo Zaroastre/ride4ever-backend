@@ -19,6 +19,7 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
+  
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: "prometheus"
 
@@ -26,4 +27,16 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["localhost:9090", "ride4ever-service-discovery:8761"]
+      - targets: [
+        "localhost:9090",
+        "ride4ever-microservice-account/actuator/propetheus",
+        "ride4ever-microservice-biker/actuator/propetheus",
+        "ride4ever-microservice-broker/actuator/propetheus",
+        "ride4ever-microservice-garage",
+        "ride4ever-microservice-motorcycleclub",
+        "ride4ever-microservice-reservation",
+        "ride4ever-microservice-trip",
+        "ride4ever-service-discovery:8761",
+        "ride4ever-service-apigateway:9600",
+        "ride4ever-service-configuration:9101"
+      ]

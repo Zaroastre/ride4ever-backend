@@ -5,16 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter.SseEventBuilder;
 
 import io.nirahtech.ride4ever.microservice.broker.business.services.alert.AlertService;
-import io.nirahtech.ride4ever.microservice.broker.domain.entities.Alert;
-import io.nirahtech.ride4ever.microservice.broker.domain.entities.Notification;
 
 @RestController
 public class BrokerRestController {
