@@ -7,10 +7,14 @@ server:
   port: 9600
 eureka:
   client:
+    fetchRegistry: false
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://ride4ever-service-discovery:8761/eureka}
   host:
     socket-timeout-millis: 30000
+feign:
+  hystrix:
+    enabled: true
 management:
   endpoints:
     web:
@@ -19,3 +23,4 @@ management:
           - health
           - info
           - prometheus
+          - hystrix.stream
