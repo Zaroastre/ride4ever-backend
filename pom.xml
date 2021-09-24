@@ -54,7 +54,9 @@
         <module>ride4ever-microservice-biker</module>
         <module>ride4ever-microservice-broker</module>
         <module>ride4ever-microservice-garage</module>
+        <module>ride4ever-microservice-geomap</module>
         <module>ride4ever-microservice-motorcycleclub</module>
+        <module>ride4ever-microservice-recovery</module>
         <module>ride4ever-microservice-reservation</module>
         <module>ride4ever-microservice-trip</module>
         <module>ride4ever-service-apigateway</module>

@@ -80,12 +80,32 @@ services:
       - network_discovery
       - network_configuration
     #   - network_database
+  ride4ever-microservice-geomap:
+    depends_on:
+      - ride4ever-service-apigateway
+    build: ./ride4ever-microservice-geomap
+    restart: always
+    hostname: geomap
+    networks:
+      - network_discovery
+      - network_configuration
+    #   - network_database
   ride4ever-microservice-club:
     depends_on:
       - ride4ever-service-apigateway
     build: ./ride4ever-microservice-motorcycleclub
     restart: always
     hostname: club
+    networks:
+      - network_discovery
+      - network_configuration
+    #   - network_database
+  ride4ever-microservice-recovery:
+    depends_on:
+      - ride4ever-service-apigateway
+    build: ./ride4ever-microservice-recovery
+    restart: always
+    hostname: recovery
     networks:
       - network_discovery
       - network_configuration
@@ -117,11 +137,15 @@ services:
     restart: always
     ports:
       - 9090:9090
+    networks:
+      - network_discovery
     volumes:
       - './ride4ever-prometheus/prometheus.yml:/etc/prometheus/prometheus.yml'
   ride4ever-microservice-grafana:
     image: grafana/grafana
     restart: always
+    networks:
+      - network_discovery
     ports:
       - 3000:3000
 networks:
