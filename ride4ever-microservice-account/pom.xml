@@ -140,6 +140,12 @@
             <version>${swagger.version}</version>
         </dependency>
 
+        <!-- JMS support (Message Broker) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+        </dependency>
+
         <!-- NIRAH-TECHNOLOGY -->
         <dependency>
             <groupId>io.nirahtech</groupId>
