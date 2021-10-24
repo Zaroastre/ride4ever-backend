@@ -17,6 +17,10 @@ import io.nirahtech.ride4ever.core.infrastructure.plugin.api.Descriptor;
 import io.nirahtech.ride4ever.core.infrastructure.plugin.api.MicroServicePlugin;
 import io.nirahtech.ride4ever.core.infrastructure.plugin.model.PluginDescriptor;
 
+/**
+ * Class that represents the Ride4Ever Microservice Account Application.
+ * This class extends @link{SpringBootServletInitializer} and implements the @{link MicroServicePlugin}
+ */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableEurekaClient
