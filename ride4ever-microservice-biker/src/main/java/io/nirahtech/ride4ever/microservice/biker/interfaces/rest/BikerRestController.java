@@ -49,7 +49,7 @@ public class BikerRestController implements Rest<Biker> {
     public Biker read(@PathVariable("identifier") String identifier) {
         Optional<Biker> option = this.service.read(identifier);
         if (option.isEmpty()) {
-            throw new ResourceNotFoundException(identifier.toString());
+            throw new ResourceNotFoundException(identifier);
         }
         return option.get();
     }
@@ -71,7 +71,7 @@ public class BikerRestController implements Rest<Biker> {
     public void delete(@PathVariable("identifier") String identifier) {
         Optional<Biker> option = this.service.read(identifier);
         if (option.isEmpty()) {
-            throw new ResourceNotFoundException(identifier.toString());
+            throw new ResourceNotFoundException(identifier);
         }
         this.service.delete(identifier);
     }

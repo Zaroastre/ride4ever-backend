@@ -62,16 +62,16 @@ services:
       - network_configuration
       - network_message_broker
     #   - network_database
-  ride4ever-microservice-broker:
-    depends_on:
-      - ride4ever-service-apigateway
-    build: ./ride4ever-microservice-broker
-    restart: always
-    hostname: broker
-    networks:
-      - network_discovery
-      - network_configuration
-      - network_message_broker
+  # ride4ever-microservice-broker:
+  #   depends_on:
+  #     - ride4ever-service-apigateway
+  #   build: ./ride4ever-microservice-broker
+  #   restart: always
+  #   hostname: broker
+  #   networks:
+  #     - network_discovery
+  #     - network_configuration
+  #     - network_message_broker
     #   - network_database
   ride4ever-microservice-garage:
     depends_on:
@@ -157,6 +157,16 @@ services:
       - network_discovery
     ports:
       - 3000:3000
+  ride4ever-service-portainer:
+    image: portainer/portainer-ce
+    restart: always
+    networks:
+      - network_discovery
+    ports:
+      - 9443:9443
+      - 9000:9000
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
   ride4ever-microservice-message-broker:
     build: ./ride4ever-message-broker
     restart: always
